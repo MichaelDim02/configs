@@ -1,0 +1,11 @@
+## BASIC #
+pacman -S newsboat nano ranger sudo wget
+
+## CREATIVE #
+pacman -S obs-studio audacity gimp
+
+## PROGRAMMING #
+pacman -S php apache python python-pip python2-pip python2 phpmyadmin mysql
+
+## PENTESTING #
+pacman -S hydra nmap metasploit dnsutils sqlmap john
