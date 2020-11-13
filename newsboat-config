@@ -24,3 +24,12 @@ macro , open-in-browser
 macro v set browser "vlc"; open-in-browser ; set browser linkhandler
 macro w set browser "w3m"; open-in-browser ; set browser linkhandler
 macro f set browser "firefox"; open-in-browser ; set browser linkhandler
+
+#color listnormal color234 black 
+#color listfocus  color166 black 
+color info       color136 color234 
+#color background color244 color234
+#
+#color listnormal_unread   color136 black
+#color listfocus_unread    white black   bold
+
