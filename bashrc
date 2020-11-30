@@ -21,3 +21,5 @@ alias ncm="ncmpcpp"
 
 PS1="\[$(tput bold)\]\[\033[38;5;1m\]\u@\h\[$(tput sgr0)\] \[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;12m\]\w\[$(tput sgr0)\] \\$ \[$(tput sgr0)\]"
 #PS1='\e[0;31[\u@\h\e[m \W $ '
+
+PATH="$PATH:$HOME/.local/bin"
