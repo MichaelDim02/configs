@@ -203,3 +203,8 @@ bindsym $mod+r mode "resize"
 bar {
         status_command i3status
 }
+
+## BRIGHTNESS ## Make sure the main user is in the SUDOers file and doesn't need a password
+#       also make sure that the program "light" is install (sudo pacman -S light)
+bindsym XF86MonBrightnessUp exec  --no-startup-id sudo light -s sysfs/backlight/amdgpu_bl0 -A 10
+bindsym XF86MonBrightnessDown exec  --no-startup-id sudo light -s sysfs/backlight/amdgpu_bl0 -U 5 
