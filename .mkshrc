@@ -1,0 +1,38 @@
+# $dotfiles: dot.mkshrc,v 1.0 2015/09/28 00:00:00 dcat Exp $
+
+[ -o login ] && . $HOME/.profile
+
+export EDITOR=vim
+export SVN_EDITOR=vim
+
+HISTFILE=$HOME/.sh.d/.history
+HISTSIZE=4096
+CDPATH=.:$HOME:/
+
+#PS1='> '
+#PS1=$'\e[31m${PWD/#$HOME/~}\e[31m${?/#0/}\e[0m > '
+PS1=$'\e[31mmichael\e[0m > '
+
+
+bind ^[a=beginning-of-line
+bind ^[e=end-of-line
+bind ^L=clear-screen
+
+alias ls="ls --color=auto"
+alias diff="diff --color=auto"
+alias grep="grep --color=auto"
+alias scim="~/Documents/.sc-im/src/sc-im"
+
+alias ..="cd .."
+alias ...="cd ../../"
+
+alias az="python ~/Documents/Projects/.az.py"
+alias time="python ~/Documents/Projects/.time.py"
+
+alias ccrypt='~/Documents/.ccrypt/ccrypt'
+alias nm="neomutt"
+alias nb="newsboat"
+alias ncm="ncmpcpp"
+alias rtv="rtv --enable-media"
+
+export LC_ALL="en_US.UTF-8"
