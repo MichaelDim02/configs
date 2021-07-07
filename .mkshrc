@@ -36,3 +36,6 @@ alias ncm="ncmpcpp"
 alias rtv="rtv --enable-media"
 
 export LC_ALL="en_US.UTF-8"
+
+bind -m '^L'=clear'^J'
+
