@@ -23,19 +23,22 @@ alt + d
 	dmenu_run
 
 alt + p
-	zathura /home/michael/Documents/uni2/programma.pdf
-
-XF86MonBrightness{Up,Down}
-	sudo light -s sysfs/backlight/amdgpu_bl0 {-A,-U} 10
-
-XF86Audio{Raise,Lower}Volume
-	pactl set-sink-volume @DEFAULT_SINK@ {+10%, -10%} && pkill -SIGRTMIN+10 i3blocks
+	zathura /home/michael/Documents/uni/uni2/programma.pdf
 
 super + s
 	signal-desktop-beta
 
 super + r
 	st -e vim ~/.scripts/reminder.sh
+
+super + p
+	passmenu
+
+XF86MonBrightness{Up,Down}
+	sudo light -s sysfs/backlight/amdgpu_bl0 {-A,-U} 10
+
+XF86Audio{Raise,Lower}Volume
+	pactl set-sink-volume @DEFAULT_SINK@ {+10%, -10%} && pkill -SIGRTMIN+10 i3blocks
 
 XF86AudioMute
 	pactl set-sink-mute @DEFAULT_SINK@ toggle &&  pkill -SIGRTMIN+10 i3blocks
