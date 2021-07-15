@@ -1,4 +1,4 @@
-#!/bin/sh
+#!bin/sh
 # $XConsortium: xinitrc.cpp,v 1.4 91/08/22 11:41:34 rws Exp $
 
 userresources=$HOME/.Xresources
@@ -24,16 +24,26 @@ if [ -f $usermodmap ]; then
     xmodmap $usermodmap
 fi
 
-# Layout
-
+## Layout
 setxkbmap -layout us,gr
 setxkbmap -option 'grp:alt_shift_toggle'
 
-# Execute DWM
-
-exec i3
-exec i3-gaps 
+## Pulseaudio
 start-pulseaudio-x11
 pulseaudio --start
-exec batsignal
-exec dmenu
+
+## bindings
+sxhkd &
+
+## dunst
+dunst &
+
+## compton
+compton &
+
+## batsignal
+batsignal &
+
+## i3
+exec i3
+exec i3-gaps

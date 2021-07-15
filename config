@@ -31,26 +31,9 @@ exec --no-startup-id nm-applet
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
 set $refresh_i3blocks_audio pkill -SIGRTMIN+5 i3blocks
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && pkill -SIGRTMIN+10 i3blocks
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && pkill -SIGRTMIN+10 i3blocks
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle &&  pkill -SIGRTMIN+10 i3blocks
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
-
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
-
-# start a terminal
-bindsym $mod+Return exec st 
-
-# start browsers
-bindsym $mod+b exec brave
-bindsym $mod+p exec "zathura /home/michael/Documents/uni2/programma.pdf"
-bindsym $mod+Shift+s exec signal-desktop-beta
-bindsym $mod+c exec "st -e neomutt"
-bindsym $mod+n exec "st -e newsboat"
-bindsym $mod+Ctrl+a exec "st -e bc -l"
-bindsym $mod+y exec myyt
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -59,12 +42,9 @@ bindsym $mod+q kill
 bindsym Ctrl+$mod+Left exec ~/.i3MoveNext.sh -1
 bindsym Ctrl+$mod+Right exec ~/.i3MoveNext.sh 1
 
-# start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
-# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
 bindsym $mod+j focus down
@@ -191,20 +171,23 @@ mode "resize" {
 # delete or uncomment the following lines if you do not have it or do not
 # want it
 for_window [class="^.*"] border pixel 2 
-gaps inner 10
-gaps outer 10
+gaps inner 20
+gaps outer 20
 #smart_gaps on
 smart_borders on
 
-exec --no-startup-id wal -i Pictures/mountain.jpg
+#exec --no startup-id wal -i Pictures/Wallpapers/papes/1588311850658.jpg
+#exec --no startup-id wal -i Pictures/Wallpapers/papes/AHDWKyF.jpg
+#exec --no startup-id wal -i Pictures/Wallpapers/papes/IdeYv12.jpg
+#exec --no-startup-id wal -i Pictures/mountain.jpg
 #exec --no-startup-id wal -i Pictures/wolf/kampinos_wilki_zwierzeta_2000pxperfect2.jpg
 #feh --bg-fill ~/Pictures/wolf/kampinos_wilki_zwierzeta_2000px2.jpg #wolves_highcon.jpg #~/Pictures/light1.jpg #winter-ebony
 
-exec --no-startup-id compton
- 
-exec --no-startup-id dunst
-
-exec --no-startup-id i3-battery-popup -n -D -L 20 -l 10
+#exec --no-startup-id compton
+# 
+#exec --no-startup-id dunst
+#
+#exec --no-startup-id i3-battery-popup -n -D -L 20 -l 10
 
 bindsym $mod+r mode "resize"
 
@@ -219,9 +202,6 @@ bar {
 	focused_workspace  #CECECE #CECECE #000000
    	}
 }
-
-bindsym XF86MonBrightnessUp exec  --no-startup-id sudo light -s sysfs/backlight/amdgpu_bl0 -A 10
-bindsym XF86MonBrightnessDown exec  --no-startup-id sudo light -s sysfs/backlight/amdgpu_bl0 -U 10
 
 bindsym $mod+m mode "move" focus floating
 mode "move" {

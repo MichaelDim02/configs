@@ -1,0 +1,44 @@
+# mk@mcdim.xyz
+#
+
+alt + Return
+	st
+
+alt + b
+	brave
+
+alt + n
+	st -e newsboat
+
+alt + c
+	st -e neomutt
+
+alt + ctrl + a
+	st -e bc -l
+
+alt + y
+	myyt
+
+alt + d
+	dmenu_run
+
+alt + p
+	zathura /home/michael/Documents/uni2/programma.pdf
+
+XF86MonBrightness{Up,Down}
+	sudo light -s sysfs/backlight/amdgpu_bl0 {-A,-U} 10
+
+XF86Audio{Raise,Lower}Volume
+	pactl set-sink-volume @DEFAULT_SINK@ {+10%, -10%} && pkill -SIGRTMIN+10 i3blocks
+
+super + s
+	signal-desktop-beta
+
+super + r
+	st -e vim ~/.scripts/reminder.sh
+
+XF86AudioMute
+	pactl set-sink-mute @DEFAULT_SINK@ toggle &&  pkill -SIGRTMIN+10 i3blocks
+
+XF86AudioMicMute
+	pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
