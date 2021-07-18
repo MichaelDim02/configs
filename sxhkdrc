@@ -1,5 +1,5 @@
-# mk@mcdim.xyz
-#
+#  mk@mcdim.xyz  #
+
 
 alt + Return
 	st
@@ -25,7 +25,7 @@ alt + d
 alt + p
 	zathura /home/michael/Documents/uni/uni2/programma.pdf
 
-super + s
+alt + ctrl + s
 	signal-desktop-beta
 
 super + r
@@ -33,6 +33,15 @@ super + r
 
 super + p
 	passmenu
+
+super + l
+	xclip -o | xargs brave
+
+super + s
+	xclip -o | sed 's/ /%20/g' | xargs -r -I \{\} brave "https://searx.info/search?q="\{\}
+
+super + g
+	xclip -o | sed 's/ /+/g' | xargs -r -I \{\}  brave "https://google.com/search?q="\{\}
 
 XF86MonBrightness{Up,Down}
 	sudo light -s sysfs/backlight/amdgpu_bl0 {-A,-U} 10
