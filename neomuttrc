@@ -40,3 +40,7 @@ bind index,pager \CI sidebar-open                 # Ctrl-o to open selected fold
 bind index,pager \CB sidebar-toggle-visible       # Ctrl-b to toggle visibility of the sidebar
 
 set realname="Michael Constantine"
+#
+#
+# APPEND THIS FOR URLVIEW
+macro pager \cb 'urlview' 'Follow links with urlview'
